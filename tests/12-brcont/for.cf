@@ -1,0 +1,10 @@
+int i;
+
+for (i = 1; true; i++;) {
+  if (i < 3)
+    continue;
+  if (!(i < 5))
+    break;
+  print_int(i);
+  print_str("\n");
+}

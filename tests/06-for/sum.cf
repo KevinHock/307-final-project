@@ -1,0 +1,10 @@
+int a;
+int sum;
+
+sum = 0;
+
+for (a = 0; a < 6; a = a + 1;) {
+  sum = sum + a;
+}
+
+print_int(sum);

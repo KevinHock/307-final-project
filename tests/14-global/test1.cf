@@ -1,0 +1,118 @@
+int ff[100];
+void println_int(int j) {
+     print_int(j);
+     print_str("\n");
+     return 0;
+}
+
+int test(int j) {
+     int i; int k;
+     println_int(++j);
+     println_int(j++);
+     for (i=0; i<10; i++;) {
+      j = i+j;
+     };
+     k = i;
+     return (++j)+k;
+}
+
+void test1(int i) {
+     int k; int l;
+     k = i;
+     l = test(i);
+     return k+l;
+}
+
+int fac(int i, int k) {
+    int rv;
+    if (i==0)
+      rv = k;
+    else rv = i*fac(i-1, k);
+    return rv;
+}
+
+int fib(int n) {
+    int rv;
+    int f[100];
+    int j;
+    rv=0;
+    if (99 < n) rv = 0;
+    else {
+      f[0]=0;
+      f[1]=1;
+      for (j=2; j<n; j++;) {
+        f[j] = f[j-1]+f[j-2];
+      }
+      rv = f[n-1];
+    }
+    return rv;
+}
+
+int fib2(int n, int **ff) {
+    int rv;
+    int j;
+    int *f;
+    f = *ff;
+    rv=0;
+    println_int(ff);
+    println_int(f);
+    if (99 < n) rv = 0;
+    else {
+      *(f+0)=1;
+      *(f+1)=1;
+      println_int(f+1);
+      println_int(*(f+1));
+      for (j=2; j<n; j++;) {
+        (*(f+j)) = (*(f+j-1))+(*(f+j-2));
+      }
+      println_int(f+2);
+      println_int(*(f+2));
+      rv = *(f+n-1);
+    }
+    return rv;
+}
+
+int a;
+int b;
+int *x;
+int **y;
+
+a = 2+2;
+b = a*3;
+
+while (0<a) {
+      b = a+b;
+      a = a-1;
+}
+println_int(b);
+
+while (true) {
+      b++;
+      if (b < a) break;
+      a = a+b;
+      ++b;
+}
+println_int(a);
+println_int(test1(57));
+
+println_int(fac(5, 1));
+println_int(fac(200, 1));
+println_int(fac(6, 2));
+println_int(fib(5));
+println_int(fib(7));
+println_int(fib(20));
+println_int(fib(21));
+println_int(fib(22));
+println_int(fib(40));
+println_int(fib(500));
+
+x = &a;
+println_int(x);
+x = &b;
+println_int(x);
+x = &(ff[0]);
+y=&x;
+println_int(y);
+println_int(*y);
+println_int(x);
+println_int(fib2(20, y));

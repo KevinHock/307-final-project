@@ -1,0 +1,21 @@
+int fact(int n) {
+  int prod;
+  int i;
+
+  prod = 1;
+  for (i = 1; i < (n+1); i++;)
+    prod = prod * i;
+  return prod;
+}
+
+void fact_range(int start, int end) {
+  int r;
+  for (; start < end; start++;) {
+    r = fact(start);
+    print_int(r);
+    print_str("\n");
+  }
+  return;
+}
+
+fact_range(3, 8);

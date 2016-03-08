@@ -1,0 +1,23 @@
+int a;
+int b;
+
+
+int f() {
+  print_str("f\n");
+  a++;
+  return 10;
+}
+
+int pa() {
+  print_int(a);
+  print_str("\n");
+  return -1;
+}
+
+a = 1;
+
+pa();
+b = f();
+print_int(b);
+print_str("\n");
+pa();

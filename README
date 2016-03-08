@@ -1,0 +1,108 @@
+Worked on with Hanne Paine
+
+For your course project, you will create an interpreter for the C-flat programming language.
+
+Files included:
+
+- Parser.mly, Lexer.mll: they convert a file to an AST. Use them (the code to
+  use them is already in run.ml), but don't modify them. They parse C-flat files
+  but they do not typecheck them so I suggest you use them with the test files
+  given to you (only 1 so far, but more to come, one for each feature that you
+  are required to implement).
+  DO NOT CHANGE THIS FILE
+
+- ast.ml: defines the AST.  
+  DO NOT CHANGE THIS FILE
+
+- store.ml: emulates physical memory. use the two get/set functions provided.
+  DO NOT CHANGE THIS FILE.
+
+- env.ml: constructs the initial environment from the declarations,
+  and provides functions to look up the environment.
+  DO NOT CHANGE THIS FILE.
+
+- eval.ml: contains the interpreter. Almost all of your code is in this file.
+
+- main.ml: contains the environment type and the logic for the interpretation.
+  DO NOT CHANGE THIS FILE.
+
+- test.py: testing script. WE WILL USE THIS SCRIPT FOR GRADING, so make sure
+  your input/output files match. Use option -v to see differences in output.
+  DO NOT CHANGE THIS FILE.
+
+You should only modify eval.ml.
+
+Use the makefile to compile the project (run "make all"), then run
+"./main [cf-file]".
+
+You will be penalized in grading if we can't interpret a file "file.cf" by doing
+"make all && ./main file.cf" so don't change that. For each input file provided,
+the output of your interpreter should EXACTLY match the output file provided.
+There SHOULD NOT EVEN BE DIFFERENCES IN TERMS OF WHITE SPACE.
+
+We have provided a testing script, which will provide an estimate for your
+grade. Simply run "python test.py" in the project directory.
+
+Tentative grading for features (see grading script):
+
+Basic features: gets you up to 90% of project grade
+Expr eval and assignment: 35
+if, switch: 15
+for, while: 10
+pre-post: 5
+functions: 10
+ptrs: 7
+arrays: 8
+
+Advanced features: gets you up to 135%
+recursion: 18
+break, continue: 7
+nested ptrs, mixing of pointers and arrays: 10
+(don't even try to solve the following unless you have implemented every previous feature.)
+global test: 10 
+
+Look into the tests/ directory for samples of each feature. Although we will
+strive to test each feature independently, this is not a guarantee, so make
+sure you get the basics correct (at least up to 07) or some test cases for
+advanced features might not work.
+
+You will work on this project in groups of 2 to 3. 
+
+TA SUGGESTIONS:
+
+I suggest you get stuff done in the following order:
+
+  - get the program to compile, get the test suite to work. only one test will
+    succeed out of the box. windows users might have to setup a linux vm.
+  
+  - get basic math (addition, division etc to work). they are similar to the
+    addition case given to you
+
+  - get (List xs) statements to work
+
+  - figure out some very basic allocation logic (all variables have size 1, no
+    functions) so you can get a working symbol table, then implement assignment.
+
+  - do tests 03 to 06. remember to implement short-circuit semantics in
+    conditions (see slides)
+
+  - change all eval function return types so that expr and cond can change the
+    memory, so you can implement pre- and post-increment.
+
+  - improve your allocation logic to allow non-recursive functions, and get those
+    working.
+
+  - congratulations, by now you have a decent grade! here is some extra work to improve your grade:
+
+    - make function calls store their arguments and return values on a stack
+      so you can get recursive functions to work. it's a lot of work but it's
+      familiar semantics and is worth a lot of points. you can start the stack
+      after the last global variable.
+
+    - pointers are a little easier than arrays, so try those first. getting
+      lvals right is tricky, but they are really no different than ints from
+      the allocation point-of-view.
+
+    - C-flat arrays have restrictions to make them simpler. They never appear
+      without a subscript. But watch out because subscripts can also be used
+      with pointers.

@@ -1,0 +1,20 @@
+int a[10];
+int b[10];
+int c[10];
+int i;
+
+void seq(int *a, int c, int n) {
+  int i;
+
+  for (i = 0; i < n; i++;)
+    (*a)[i] = i+c;
+  return;
+}
+
+seq(&a, 2, 10);
+seq(&b, -1, 10);
+
+for (i = 0; i < 10; i++;)
+  c[i] = a[i] + b[i];
+
+print_int(c[3]);

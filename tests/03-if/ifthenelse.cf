@@ -1,0 +1,7 @@
+if (true)
+  print_str("hello ");
+
+if (false)
+  print_int(5);
+else
+  print_str("world");

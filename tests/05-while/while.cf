@@ -1,0 +1,11 @@
+int a;
+
+a = 0;
+
+while (a < 8) {
+  print_int(a);
+  print_str("\n");
+  a = a + 2;
+}
+
+print_int(a);

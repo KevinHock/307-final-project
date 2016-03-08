@@ -1,0 +1,14 @@
+int a;
+int *b;
+int *c;
+
+a = 1;
+b = &a;
+*b = 10;
+print_int(a);
+print_str("\n");
+print_int(*b);
+print_str("\n");
+c = b;
+print_int(*c);
+print_str("\n");

@@ -1,0 +1,20 @@
+int a;
+int b;
+int c;
+
+a = 70;
+b = 56;
+// gcd calculation
+
+
+while (!(a == b)) {
+  while (b < a) {
+    c = a - b;
+    a = c;
+  }
+  while (a < b) {
+    c = b - a;
+    b = c;
+  }
+}
+print_int(a);

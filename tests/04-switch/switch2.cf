@@ -1,0 +1,17 @@
+int a;
+
+a = 2;
+a = 2*a;
+
+switch (a-10) {
+  case 1:
+    print_int(999);
+  case 2:
+    print_int(2);
+  default:
+    print_int(a);
+    print_str("\n");
+    a = 0;
+}
+
+print_int(a);

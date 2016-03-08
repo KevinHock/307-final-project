@@ -1,0 +1,4 @@
+int a;
+int b;
+
+print_int(1+2+3+4);

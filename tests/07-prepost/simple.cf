@@ -1,0 +1,11 @@
+int a;
+
+a = 0;
+while (a++ < 5);
+print_int(a);
+
+print_str("\n");
+
+a = 0;
+while(++a < 5);
+print_int(a);

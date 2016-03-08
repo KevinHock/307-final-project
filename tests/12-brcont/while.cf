@@ -1,0 +1,19 @@
+int a;
+
+while(true) {
+  print_str("hi\n");
+  break;
+  print_str("sfgfsdg");
+}
+
+a = 1;
+while(true) {
+  print_str("hi\n");
+  if (a == 1) {
+    a = 0;
+    continue;
+  }
+  if (a == 0)
+    break;
+  print_str("fgghddh");
+}

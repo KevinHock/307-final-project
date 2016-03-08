@@ -1,0 +1,15 @@
+int a;
+
+a = 5;
+
+switch (a-1) {
+  case 1:
+    print_int(999);
+  case 2:
+    print_int(2);
+  case 4:
+    print_str("hello world");
+  default:
+    print_str("nope");
+}
+

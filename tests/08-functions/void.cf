@@ -1,0 +1,19 @@
+int a;
+
+
+void f() {
+  print_str("f\n");
+  a++;
+  pa();
+  return;
+}
+
+void pa() {
+  print_int(a);
+  print_str("\n");
+  return;
+}
+
+a=1;
+f();
+f();

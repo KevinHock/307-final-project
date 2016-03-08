@@ -1,0 +1,9 @@
+int a;
+int b;
+
+a = 2+2;
+b = a*3;
+
+print_int(a);
+print_str("\n");
+print_int(b);

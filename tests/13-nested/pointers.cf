@@ -1,0 +1,11 @@
+int a;
+int *b;
+int **c;
+
+a = 5;
+b = &a;
+c = &b;
+
+(**c)++;
+(*b)++;
+print_int(a);
